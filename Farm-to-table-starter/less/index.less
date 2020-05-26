@@ -1,0 +1,7 @@
+@import "mixins"; // these are consumed by the compiler 
+@import "reset"; // this goes first because we do not want to reset any styles we've written
+@import "general"; // general styles that may be over written
+// the order in which sections appear on the page - each of these files is self contained so in theory it doesn't matter which one comes first, but it makes sense to put them into the order in which they appear
+@import "header"; 
+@import "main";
+@import "footer";
