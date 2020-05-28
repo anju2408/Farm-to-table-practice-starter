@@ -1,18 +1,169 @@
 .container{
     display:flex;
+    flex-wrap:wrap;
     justify-content: space-around;
+    
+    @media @phone{
+        justify-content:center;
+    }
+
     .box{
         width:20%;
         text-align:center;
         .bordered();
         background-color:#fff;
+
+        @media @tablet{
+            margin: 2% 0;
+            width: 45%;
+            border-radius: 10px;
+        }
+
+        @media @phone{
+            width:80%;
+            margin:2% 0;
+        }
     }// this closes box
 }// this closes container
 // hero image section 
+
 .hero-img{
-    background-image:url('../images/dirt.jpg');
+    // background-image:url('../images/dirt.jpg');
+    .bg-img-stuff(url('../images/dirt.jpg'));
     height:40vh;
     background-attachment: fixed;
     background-size:cover;
     background-position: center;
 }
+
+#about{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    .text{
+        width:70%;
+        .bordered();
+        text-align:center;
+
+       @media @tablet{
+        width: 95%;
+       border-radius: 15px;
+       }
+    
+        @media @phone{
+            margin: 2% 0; //changed
+            width:80%;      
+            }
+    }
+}
+
+.offers{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+
+    .promo{
+        width:45%;
+        height:40vh;
+        margin:2% 0;
+        display:flex;
+        align-items:flex-end;
+
+        &:hover{
+            .hide{
+                display:block;
+            }
+        }
+        .hide{
+            display:none;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 4%;
+            @media @tablet {
+                display: block;
+                border-radius: 10px;
+                padding: 2%;
+            }
+            @media @phone{
+                display: block;
+            }
+        } // this closes hide 
+    }//this closes promo
+    .farm {
+        .bg-img-stuff(url('../images/barn.jpg'));
+    }
+    .cooking {
+        .bg-img-stuff(url('../images/cook.jpg'));
+    }
+    .produce {
+        .bg-img-stuff(url('../images/produce.jpg'));
+    }
+    .animals {
+        .bg-img-stuff(url('../images/sheep.jpg'));
+    }// this closes offers
+}
+
+#contact{
+    display: flex;
+    flex-wrap: wrap;
+
+    h2{
+        width: 100%;
+        @media @tablet{
+            order: -1;
+        }
+        @media @phone{
+            order: -1;
+        }
+    }
+    
+    .left, .right{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media @tablet{
+            width: 100%;
+        }
+        @media @phone{
+            width:100%;
+        }
+    }
+
+    .left{
+
+        @media@tablet{
+            order: 2;
+        }
+        @media @phone{
+            order:2;
+        }
+
+        div{
+            width: 55%;
+            line-height: 2.5;
+
+            @media @tablet{
+                width: 80%;
+                margin-top: 8%;
+            }
+            @media @phone{
+                width:80%;
+                margin-top:15%;
+            }
+        }
+    }
+    
+    .right{
+        @media @tablet{
+            order:1;
+        }  
+
+        @media @phone{
+            order:1;
+        }
+            div{
+                width: 80%;
+            }
+        }
+    }

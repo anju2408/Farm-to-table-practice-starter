@@ -1,4 +1,16 @@
+@main-color:#fcb131;
+@tablet:~'(max-width: 700px)';
+@phone: ~'(max-width: 500px)';
+
+
+
 .bordered(){
     border:2px solid #444;
     padding:4%;
+}
+.bg-img-stuff(@img-path, @position:center){
+    background-image: @img-path;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: @position;
 }
